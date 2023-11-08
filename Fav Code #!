@@ -1,0 +1,84 @@
+lines = []
+with open('web.txt') as f:
+  lines = f.readlines()
+#print(lines)
+
+line_list = []
+for line in lines:
+  line_list.append(line)
+#print(line_list)
+
+for i in range(len(line_list)):
+  if 'table' in line_list[i]:
+    pos = line_list.index(line_list[i])
+    table = line_list[pos]
+#print(pos)
+
+#print(line_list[pos][:1350])
+
+row = []
+rows = []
+
+for i in range(len(table)):
+  if table[i:i+5] == '</tr>':
+    row.append(table[i:i+5])
+    row = ''.join(row)
+    rows.append(row)
+    row = []
+  else:
+    row.append(table[i])
+#print(rows[3])
+
+
+
+data = []
+
+for row in rows:
+  poll = []
+  for i in range(len(row)):
+    if row[i:i+4] == '</a>':
+      while row[i] != '>':
+        poll.append(row[i])
+        i = i - 1
+      poll.reverse()
+      poll.remove('<')
+      poll = ''.join(poll)
+      data.append([poll])
+      break
+      poll = []
+#print(data)
+data.insert(0,[])
+#print(len(rows))
+#print(len(data))
+
+for k in range(len(rows)):
+  date1 = ''
+  for i in range(len(rows[k])):
+    if rows[k][i:i+3] == ' - ':
+      date = rows[k][i-5:i+8]
+      for j in range(len(date)):
+          if date[j] != '>' and date[j] != 'd' and date[j] != '<':
+            date1 = date1 + date[j]
+      if date1[-1] == '/':
+        date1 = date1[:-1]
+      data[k].append(date1)
+    if rows[k][i-1] == '>' and rows[k][i+2] == '<':
+      fav = rows[k][i:i+2]
+      if fav.isnumeric():
+        data[k].append(int(fav))
+
+data.remove(data[0])
+data.remove(data[0])
+print(data)
+
+import csv
+
+fields = ['Poll','Date','Favorability','Unfavorability']
+filename = "data.csv"
+with open(filename, 'w') as csvfile:
+    # creating a csv writer object
+    csvwriter = csv.writer(csvfile)
+    # writing the fields
+    csvwriter.writerow(fields)
+    # writing the data rows
+    csvwriter.writerows(data)

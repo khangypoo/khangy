@@ -1,0 +1,51 @@
+#questions
+adjective = "Name a adjective "
+animal = "Name a cute Animal "
+noun = "Name a noun "
+superhero_power = "Name a superhero power "
+color = "Name a color "
+#specific questions
+object_space = input("Name an object in outspace ")
+distance = input("Name a very long distance ")
+adjective1 = input("adjective")
+color1 = input("color")
+object = input("Name an object ")
+adjective2 = input("adjective")
+adjective3 = input("adjective")
+plural_noun = input("Name a plural noun ")
+flying_object = input("Name a flying object ")
+adjective4 = input("adjective")
+animal1 = input("animal")
+adjective5 = input("adjective")
+animal2 = input("animal")
+adjective6 = input("adjective")
+noun1 = input("noun")
+adjective7 = input("adjective")
+noun2 = input("noun")
+adjective8 = input("adjective")
+noun3 = input("noun")
+superhero_power1 = input("superhero_power")
+superhero_power2 = input("superhero_power")
+superhero_power3 = input("superhero_power")
+adjective9 = input("adjective")
+color2 = input("color")
+adjective10 = input("adjective")
+color3 = input("color")
+adjective11 = input("adjective")
+noun4 = input("noun")
+verb = input("Name a past tense verb ")
+adjective12 = input("adjective")
+adjective13 = input("adjective")
+
+#story
+print('Once upon a time in a(n) ' + str(adjective1) + str(distance) + 'a brave superhero saved life as we know it. The ' + str(adjective1) + str(color1) + str(object) + 'enjoyed helping others. ')
+
+print('She/he walked ' + str(adjective2) + str(adjective3) + str(plural_noun) + 'across the street. She/he prevented ' + str(flying_object) + 'from falling from the sky.')
+      
+print('She/he rescued ' + str(adjective4) + str(animal1) + 'and ' + str(adjective5) + str(animal2) + '. She/he stopped ' + str(adjective6) + str(noun) + 'robbers, rowdy ' + str(noun2) + 'villains, and ' + str(adjective8) + str(noun3) + 'crime bosses in their tracks.')
+
+print('Her/his superhero powers included ' + str(superhero_power1) + str(superhero_power2) + str(superhero_power3) + '. She/he could leap ' + str(adjective9) +  str(color2) + 'buildings in a single bound. ')
+
+print('One day, a giant ' + str(adjective10) + 'asteroid was going to hit the earth. No one knew what to do, but our brave hero and her/his trusty sidekick, ' + str(color3) + str(adjective4) +  str(noun4) + 'came to the rescue. ')
+
+print('They ' + str(verb) + 'into their ' + str(adjective12) + str(adjective13) + 'spaceship and blasted the asteroid to pieces, saving the day.')

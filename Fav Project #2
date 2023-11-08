@@ -1,0 +1,16 @@
+prime = True
+not_prime = []
+print('Enter a number')
+num = int(input())
+for i in range(2 , num):
+  if num % i == 0:
+    prime = False
+    not_prime.append(i)
+    
+if prime == True:
+  print('it is a prime number')
+if prime != True:
+    print('it not a prime number')
+    firstnum = (not_prime)[0]
+    secondnum = (not_prime)[-1]
+    print(firstnum , 'times' , secondnum , 'is' , num)
